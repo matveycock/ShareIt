@@ -1,35 +1,33 @@
 package ru.matveycock.ShareIt.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.matveycock.ShareIt.model.Item;
 
 import java.util.List;
 
-@RestController("/item")
+@RestController
 public class ItemController {
 
 
-    @GetMapping
+    @GetMapping("/item")
     public List<Item> getAllItems(){
         return null;
     }
 
 
-    @GetMapping("/{id}")
-    public Item getItembyID( long id){
+    @GetMapping("/item/{id}")
+    public Item getItemByID(@PathVariable long id){
         return null;
     }
 
-    @PostMapping
-    public void addNewItem(){
+
+    @PostMapping("/item/{id}")
+    public void updateItemByID(@PathVariable long id){
 
     }
 
-    @PostMapping("/{id}")
-    public void updateItemByID(){
+    @PostMapping("/item")
+    public void addNewItem(){
 
     }
 
