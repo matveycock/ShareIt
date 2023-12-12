@@ -6,24 +6,25 @@ import ru.matveycock.ShareIt.model.User;
 import java.util.List;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/{id}")
     public User getUserById(@PathVariable long id){
         return null;
     }
 
-    @GetMapping("/users")
+    @GetMapping
     public List<User> getAllUsers(){
         return null;
     }
 
-    @PostMapping("/users")
+    @PostMapping
     public void addNewUser(){
 
     }
 
-    @PostMapping("/users/{id}")
+    @PostMapping("/{id}")
     public void updateUserByID(@PathVariable long id){
 
     }

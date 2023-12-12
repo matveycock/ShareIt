@@ -6,27 +6,28 @@ import ru.matveycock.ShareIt.model.Item;
 import java.util.List;
 
 @RestController
+@RequestMapping("/items")
 public class ItemController {
 
 
-    @GetMapping("/item")
+    @GetMapping
     public List<Item> getAllItems(){
         return null;
     }
 
 
-    @GetMapping("/item/{id}")
+    @GetMapping("/{id}")
     public Item getItemByID(@PathVariable long id){
         return null;
     }
 
 
-    @PostMapping("/item/{id}")
+    @PostMapping("{id}")
     public void updateItemByID(@PathVariable long id){
 
     }
 
-    @PostMapping("/item")
+    @PostMapping
     public void addNewItem(){
 
     }
