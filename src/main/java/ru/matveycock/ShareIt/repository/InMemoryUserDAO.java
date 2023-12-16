@@ -21,7 +21,6 @@ public class InMemoryUserDAO {
                 .orElse(null);
     }
 
-
     public List<User> findAllUsers() {
         return USERS;
     }
