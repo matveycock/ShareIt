@@ -3,7 +3,7 @@ package ru.matveycock.ShareIt.service.impl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.matveycock.ShareIt.model.Item;
-import ru.matveycock.ShareIt.repository.InMemoryItemDAO;
+import ru.matveycock.ShareIt.repository.item.InMemoryItemDAO;
 import ru.matveycock.ShareIt.service.ItemService;
 
 import java.util.List;

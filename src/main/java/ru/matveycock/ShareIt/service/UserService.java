@@ -1,6 +1,7 @@
 package ru.matveycock.ShareIt.service;
 
 import org.springframework.stereotype.Service;
+import ru.matveycock.ShareIt.model.Item;
 import ru.matveycock.ShareIt.model.User;
 
 import java.util.EnumMap;
@@ -15,7 +16,9 @@ public interface UserService {
 
     User saveNewUser(User user);
 
-    User updateUserByEmail(User user);
+    void updateUserByEmail(User user);
 
     void deleteUserByID(long id);
+
+    void addNewItem(Long id, Item item);
 }

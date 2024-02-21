@@ -2,8 +2,9 @@ package ru.matveycock.ShareIt.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.matveycock.ShareIt.model.Item;
 import ru.matveycock.ShareIt.model.User;
-import ru.matveycock.ShareIt.repository.InMemoryUserDAO;
+import ru.matveycock.ShareIt.repository.user.InMemoryUserDAO;
 import ru.matveycock.ShareIt.service.UserService;
 
 import java.util.List;
@@ -30,12 +31,17 @@ public class InMemoryUserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUserByEmail(User user) {
-        return repository.updateUserByEmail(user);
+    public void updateUserByEmail(User user) {
+        repository.updateUserByEmail(user);
     }
 
     @Override
     public void deleteUserByID(long id) {
         repository.deleteUserByID(id);
+    }
+
+    @Override
+    public void addNewItem(Long id, Item item) {
+        // TODO Auto-generated method stub
     }
 }

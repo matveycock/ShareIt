@@ -12,10 +12,15 @@ import lombok.Getter;
 @Entity
 @Table(name = "items")
 public class Item {
+
     @Id
     @GeneratedValue
     private Long id;
+
     private String name;
+
     private String description;
+
+    private Long ownerId;
 
 }

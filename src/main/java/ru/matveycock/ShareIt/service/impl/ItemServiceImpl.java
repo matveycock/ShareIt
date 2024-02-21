@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import ru.matveycock.ShareIt.model.Item;
-import ru.matveycock.ShareIt.repository.ItemRepository;
+import ru.matveycock.ShareIt.repository.item.ItemRepository;
 import ru.matveycock.ShareIt.service.ItemService;
 
 import java.util.List;

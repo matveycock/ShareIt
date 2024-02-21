@@ -1,4 +1,4 @@
-package ru.matveycock.ShareIt.repository;
+package ru.matveycock.ShareIt.repository.user;
 
 import org.springframework.stereotype.Repository;
 import ru.matveycock.ShareIt.model.User;
@@ -12,7 +12,6 @@ import java.util.stream.IntStream;
 public class InMemoryUserDAO {
 
     private final List<User> USERS = new ArrayList<User>();
-
 
     public User findUserByID(long id) {
         return USERS.stream()

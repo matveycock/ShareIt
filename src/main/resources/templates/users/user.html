@@ -29,6 +29,11 @@
         <div><strong>Username:</strong></div>
         <div th:text="${user.getUsername()}">Username</div>
     </div>
+    <div><strong>Items:</strong></div>
+    <div th:each="item : ${items}">
+        <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">item</a>
+    </div>
+
 </div>
 <br>
 <p><a href="http://localhost:8080/users">К списку пользователей</a></p>

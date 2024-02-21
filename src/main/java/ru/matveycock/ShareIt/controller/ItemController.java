@@ -30,6 +30,7 @@ public class ItemController {
     public Item updateItemByID(@RequestBody Item item){
         return service.updateItemByID(item);
     }
+
     @PostMapping
     public Item addNewItem(@RequestBody Item item){
         return service.addNewItem(item);

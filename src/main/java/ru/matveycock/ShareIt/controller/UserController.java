@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.matveycock.ShareIt.model.Item;
 import ru.matveycock.ShareIt.model.User;
 import ru.matveycock.ShareIt.service.UserService;
 
@@ -21,6 +22,7 @@ public class UserController {
     @GetMapping("/{id}")
     public String findUserByID(@PathVariable long id, Model model){
         model.addAttribute("user", service.findUserByID(id));
+        model.addAttribute("items", service.findUserByID(id).getItems());
         return "users/user";
     }
 
@@ -36,8 +38,9 @@ public class UserController {
     }
 
     @PutMapping("/{id}/update")
-    public User updateUserByEmail(@RequestBody User user){
-        return service.updateUserByEmail(user);
+    public String updateUserByEmail(@RequestBody User user){
+        service.updateUserByEmail(user);
+        return "User updated";
     }
 
     @DeleteMapping("/{id}/delete")
@@ -45,5 +48,10 @@ public class UserController {
         service.deleteUserByID(id);
     }
 
+    @PutMapping("/{id}/add-item")
+    public String addNewItem(@PathVariable Long id,@RequestBody Item item){
+        service.addNewItem(id, item);
+        return "success add new item";
+    }
 
 }

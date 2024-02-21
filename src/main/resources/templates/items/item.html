@@ -10,6 +10,10 @@
 </div>
 <div>
     <div>
+        <div><strong>Owner:</strong></div>
+        <a th:href="@{/users/{id}(id=${item.getOwnerId()})}" th:text="${item.getOwnerId()}">Name</a>
+    </div>
+    <div>
         <div><strong>Name:</strong></div>
         <div th:text="${item.getName()}">Name</div>
     </div>

@@ -1,4 +1,4 @@
-package ru.matveycock.ShareIt.repository;
+package ru.matveycock.ShareIt.repository.item;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
