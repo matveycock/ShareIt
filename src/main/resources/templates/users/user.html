@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<div>
+    <h3>Данные пользователя</h3>
+</div>
+<div>
+    <div>
+        <div><strong>Name:</strong></div>
+        <div th:text="${user.getName()}">Name</div>
+    </div>
+    <div>
+        <div><strong>Surname:</strong></div>
+        <div th:text="${user.getSurname()}">Surname</div>
+    </div>
+    <div>
+        <div><strong>Id:</strong></div>
+        <div th:text="${user.getId()}">Id</div>
+    </div>
+    <div>
+        <div><strong>Email:</strong></div>
+        <div th:text="${user.getEmail()}">Email</div>
+    </div>
+    <div>
+        <div><strong>Username:</strong></div>
+        <div th:text="${user.getUsername()}">Username</div>
+    </div>
+</div>
+<br>
+<p><a href="http://localhost:8080/users">К списку пользователей</a></p>
+</body>
+</html>

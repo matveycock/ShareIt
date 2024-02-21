@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<div>
+    <h3>Данные товара</h3>
+</div>
+<div>
+    <div>
+        <div><strong>Name:</strong></div>
+        <div th:text="${item.getName()}">Name</div>
+    </div>
+    <div>
+        <div><strong>Description:</strong></div>
+        <div th:text="${item.getDescription()}">Description</div>
+    </div>
+</div>
+<br>
+<p><a href="http://localhost:8080/items">К списку товаров</a></p>
+</body>
+</html>

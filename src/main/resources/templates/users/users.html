@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="u : ${users}">
+    <a th:href="@{/users/{id}(id=${u.getId()})}" th:text="${u.getName() + ' ' + u.getSurname()}">user</a>
+</div>
+</body>
+</html>

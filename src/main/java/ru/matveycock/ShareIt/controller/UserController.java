@@ -2,6 +2,8 @@ package ru.matveycock.ShareIt.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.matveycock.ShareIt.model.User;
 import ru.matveycock.ShareIt.service.UserService;
@@ -9,7 +11,7 @@ import ru.matveycock.ShareIt.service.UserService;
 import java.util.List;
 
 
-@RestController
+@Controller
 @RequestMapping("/users")
 @AllArgsConstructor
 public class UserController {
@@ -17,13 +19,15 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/{id}")
-    public User findUserByID(@PathVariable long id){
-        return service.findUserByID(id);
+    public String findUserByID(@PathVariable long id, Model model){
+        model.addAttribute("user", service.findUserByID(id));
+        return "users/user";
     }
 
     @GetMapping
-    public List<User> findAllUsers(){
-        return service.findAllUsers();
+    public String findAllUsers(Model model){
+        model.addAttribute("users", service.findAllUsers());
+        return "users/users";
     }
 
     @PostMapping

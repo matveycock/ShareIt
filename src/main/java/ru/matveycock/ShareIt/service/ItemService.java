@@ -1,7 +1,5 @@
 package ru.matveycock.ShareIt.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 import ru.matveycock.ShareIt.model.Item;
 
 import java.util.List;
