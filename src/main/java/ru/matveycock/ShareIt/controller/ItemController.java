@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.matveycock.ShareIt.kafka.KafkaProducer;
 import ru.matveycock.ShareIt.model.Item;
 import ru.matveycock.ShareIt.service.ItemService;
 
@@ -14,9 +15,12 @@ public class ItemController {
 
     private ItemService service;
 
+    private final KafkaProducer producer;
+
     @GetMapping
     public String getAllItems(Model model){
         model.addAttribute("items", service.getAllItems());
+        producer.sendMessage("123");
         return "items/items";
     }
 
